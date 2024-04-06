@@ -6,8 +6,9 @@ import Livre from "./Livre";
 import { BrowserRouter, Routes,Route } from "react-router-dom";
 
 const App = () => {
+  const basename = import.meta.env.MODE === "production" ? "/entrainementP8" : "";
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
